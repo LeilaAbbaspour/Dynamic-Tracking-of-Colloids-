@@ -97,12 +97,8 @@ for specific_category in specific_categories:
 
 
 
+# Plot the exponent of the MSD for different specific catagories
 
-with open(path + "/df.pkl", "rb") as file:
-    df = pickle.load(file)
-
-
-specific_categories = ['0mMurea+dye', '10mMurea+dye', '25mMurea+dye', '100mMurea+dye', '500mMurea+dye']
 
 # Initialize a dictionary to store alpha values for each category
 alpha_values_by_category = {category: [] for category in specific_categories}
@@ -129,7 +125,6 @@ for specific_category in specific_categories:
 fig, ax = plt.subplots(1, 1, figsize=(10, 8))
 labelsize =25
 fontsize = 30
-
 # Create a list of alpha values for each category
 alpha_data = [alpha_values_by_category[category] for category in specific_categories]
 
@@ -144,11 +139,11 @@ plt.xticks(rotation=45, ha='right')
 
 plt.show()
 
+# Plot the diffusion coefficent of the colloids for different specific catagories
 
-specific_categories = ['0mMurea+dye', '10mMurea+dye', '25mMurea+dye', '100mMurea+dye', '500mMurea+dye']
 
 # Initialize a dictionary to store alpha values for each category
-alpha_values_by_category = {category: [] for category in specific_categories}
+D_values_by_category = {category: [] for category in specific_categories}
 
 # Read the data for each category and store alpha values
 for specific_category in specific_categories:
