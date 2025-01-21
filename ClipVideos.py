@@ -41,7 +41,6 @@ if specific_category in categorized_files:
         print(f"  {f}")
 else:
     print(f"No files found in category '{specific_category}'.")
-# In[6]:
 
 
 # Dictionary to hold categorized files
