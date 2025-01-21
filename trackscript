@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Use bash as shell
+#$ -S /bin/bash
+
+# Preserve environment variables
+#$ -V
+
+# Execute from current working directory
+#$ -cwd
+
+# Merge standard output and standard error into one file
+#$ -j yes
+
+# Standard name of the job (if none is given on the command line)
+#$ -N demonstrationJob
+
+# Some diagnostic messages for the output
+echo Started: `date`
+echo          on `hostname`
+echo ------------
+
+# Check number of input arguments
+if [ $# -lt 0 ]
+then
+  echo "Usage: moviescript"
+  exit 65
+fi
+
+
+export MKL_NUM_THREADS=1
+export NUMEXPR_NUM_THREADS=1
+export OMP_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+ 
+
+/usr/ds/anaconda3/bin/python Findtracks.py $nfile
+# Print diagnostic messages
+echo ------------
+echo Ended: `date`
