@@ -26,7 +26,7 @@ folders=["20240725/emulsion data_stoma with or without fuel/",#0
         ]
 
 dataaddr = r"/ParticleTracking/Raw-Data-Experiment/"+folders[0]
-base_path = "./AnalyzedData/Latest/"+folders[0]
+base_path = "./AnalyzedData/"+folders[0]
 
 
 filename=os.listdir(dataaddr)[nfile]
